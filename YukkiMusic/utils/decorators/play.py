@@ -139,7 +139,7 @@ def PlayWrapper(command):
                     ChatMemberStatus.RESTRICTED,
                 ]:
                     return await message.reply_text(
-                        _["call_13"].format(
+                        _["call_2"].format(
                             app.mention, userbot.id, userbot.name, userbot.username
                         )
                     )
@@ -160,14 +160,14 @@ def PlayWrapper(command):
                             return await message.reply_text(_["call_12"])
                         except Exception as e:
                             return await message.reply_text(
-                                _["call_14"].format(app.mention, type(e).__name__)
+                                _["call_3"].format(app.mention, type(e).__name__)
                             )
 
                 if invitelink.startswith("https://t.me/+"):
                     invitelink = invitelink.replace(
                         "https://t.me/+", "https://t.me/joinchat/"
                     )
-                myu = await message.reply_text(_["call_15"].format(app.mention))
+                myu = await message.reply_text(_["call_5"].format(app.mention))
                 try:
                     await asyncio.sleep(1)
                     await userbot.join_chat(invitelink)
@@ -176,15 +176,15 @@ def PlayWrapper(command):
                         await app.approve_chat_join_request(chat_id, userbot.id)
                     except Exception as e:
                         return await message.reply_text(
-                            _["call_14"].format(app.mention, type(e).__name__)
+                            _["call_3"].format(app.mention, type(e).__name__)
                         )
                     await asyncio.sleep(3)
-                    await myu.edit(_["call_16"].format(app.mention))
+                    await myu.edit(_["call_6"].format(app.mention))
                 except UserAlreadyParticipant:
                     pass
                 except Exception as e:
                     return await message.reply_text(
-                        _["call_14"].format(app.mention, type(e).__name__)
+                        _["call_3"].format(app.mention, type(e).__name__)
                     )
 
                 links[chat_id] = invitelink
