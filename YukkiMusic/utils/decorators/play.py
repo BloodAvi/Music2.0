@@ -20,6 +20,7 @@ from YukkiMusic.misc import db
 from YukkiMusic.utils.database import (get_cmode, get_lang,
                                        get_playmode, get_playtype,
                                        is_active_chat,
+                                       get_assistant, 
                                        is_commanddelete_on,
                                        is_served_private_chat)
 from YukkiMusic.utils.database.memorydatabase import is_maintenance
